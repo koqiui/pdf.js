@@ -6,11 +6,11 @@ PDF.js is community-driven and supported by Mozilla Labs. Our goal is to
 create a general-purpose, web standards-based platform for parsing and
 rendering PDFs.
 
-## Changes 
+## 变更列表
 by koqiui
-1、去掉 app_options.js中默认的url
-2、去掉 display\fetch_stream.js中的默认同源
-3、去掉 app.js中的跨域错误提示
+- 去掉 app_options.js中默认的url
+- 去掉 display\fetch_stream.js中的默认同源
+- 去掉 app.js中的跨域错误提示
 
 
 ## Contributing
@@ -147,10 +147,11 @@ Follow us on twitter: @pdfjs
 
 + https://twitter.com/pdfjs
 
-显示pdf文件名称（为什么pdf文件名称不能正常显示?）
- 问题原因：跨域问题，也即 pdfjs 和 应用 不在同一域名，而W3C规范要求浏览器不能暴露 Content-Dispositon头信息
- 解决办法：服务器端设置头
- 在服务器返回的header中添加（注意：Access-Control-Expose-Headers 必须设置）
+显示pdf文件名称（为什么pdf文件名称不能正常显示?）  
+
+ - 问题原因：跨域问题，也即 pdfjs 和 应用 不在同一域名，而W3C规范要求浏览器不能暴露 Content-Dispositon头信息
+ - 解决办法：服务器端设置头
+ 示例：在服务器返回的header中添加（注意：Access-Control-Expose-Headers 必须设置）
  ```
  response.addHeader(“Access-Control-Allow-Headers”, “Content-Dispositon,...”);
  response.addHeader(“Access-Control-Expose-Headers”,“Content-Dispositon,...”);
