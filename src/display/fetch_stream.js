@@ -32,7 +32,9 @@ function createFetchOptions(headers, withCredentials, abortController) {
     headers,
     signal: abortController && abortController.signal,
     mode: "cors",
-    credentials: withCredentials ? "include" : "same-origin",
+    //@modified by koqiui 2020-07-02 去掉同源限制
+    //credentials: withCredentials ? "include" : "same-origin",
+    credentials: withCredentials ? "include" : "omit",
     redirect: "follow",
   };
 }

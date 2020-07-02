@@ -1813,7 +1813,9 @@ if (typeof PDFJSDev === "undefined" || PDFJSDev.test("GENERIC")) {
       // any blob:-URL. The browser's same-origin policy will block requests to
       // blob:-URLs from other origins, so this is safe.
       if (origin !== viewerOrigin && protocol !== "blob:") {
-        throw new Error("file origin does not match viewer's");
+        //@modified by koqiui 2020-07-02 去掉同源错误（改为警告）
+        //throw new Error("file origin does not match viewer's");
+        console.warn("file origin does not match viewer's");
       }
     } catch (ex) {
       const message = ex && ex.message;

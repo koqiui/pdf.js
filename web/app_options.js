@@ -35,7 +35,9 @@ const defaultOptions = {
   },
   defaultUrl: {
     /** @type {string} */
-    value: "compressed.tracemonkey-pldi-09.pdf",
+    //@modified by koqiui 2020-07-02 去掉默认url
+    //value: "compressed.tracemonkey-pldi-09.pdf",
+    value: "",
     kind: OptionKind.VIEWER,
   },
   defaultZoomValue: {
